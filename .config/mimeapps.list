@@ -1,0 +1,6 @@
+[Default Applications]
+x-scheme-handler/discord=vesktop.desktop
+
+[Added Associations]
+application/x-hwp=hoffice11-hwp.desktop;
+application/json=code.desktop;

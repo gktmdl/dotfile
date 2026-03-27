@@ -1,0 +1,43 @@
+# 프롬프트 사이에 빈 줄 추가
+#add_newline = true
+
+# 왼쪽 구성 요소들 (아이콘 포함)
+#format = """
+#(fixed_sep)$directory[  ](fixed_sep)$character
+#"""
+
+#[directory]
+#style = "bg:#89b4fa fg:#1e1e2e"
+#format = "[ $path ]($style)"
+#truncation_length = 3
+#fish_style_pwd_dir_length = 1
+# 여기서 폴더 아이콘을 설정합니다
+#read_only = " 󰌾"
+
+#[character]
+#success_symbol = "[ ](bold blue) "
+#error_symbol = "[ ](bold red) "
+
+# 왼쪽 프롬프트 구성
+format = """
+[](fg:#313244)\
+$directory\
+[](fg:#313244)\
+[](fg:#cba6f7)\
+[ ](bg:#cba6f7 fg:#1e1e2e)\
+[](fg:#cba6f7)\
+$character
+"""
+
+# 디렉토리(폴더) 설정
+[directory]
+style = "bg:#313244 fg:#cba6f7" # 배경색과 글자색
+format = "[$path]($style)"      # 경로 표시
+truncation_length = 3
+fish_style_pwd_dir_length = 1
+
+
+# 입력 대기 기호
+[character]
+success_symbol = "[ ❯](bold #89dceb) "
+error_symbol = "[ ❯](bold #f38ba8) "

@@ -1,0 +1,65 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 4, 
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["custom/music"],
+    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray", "custom/lock", "custom/power"],
+
+
+    "hyprland/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "format": "{icon}",
+         "format-icons": {
+             "default": "",
+             "active": ""
+         }
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+    "clock": {
+        "format": "󱑊 {:%H:%M}", // 최신 시계 아이콘
+        "format-alt": "󰃭 {:%Y-%m-%d}"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+    "battery": {
+        "states": {"warning": 30, "critical": 15},
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": { "default": ["󰕿", "󰖀", "󰕾"] }
+    },
+    "custom/lock": { "format": "󰌾" }, // 잠금 아이콘
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout -b 2 -c 0 -r 0 --protocol layer-shell",
+        "tooltip": false
+    }
+}
+
+"modules-right": [..., "fcitx5", ...],
+
+"fcitx5": {
+    "interval": 1,
+    "format": "{declined}",
+    "format-kr": "한",
+    "format-en": "A"
+}
